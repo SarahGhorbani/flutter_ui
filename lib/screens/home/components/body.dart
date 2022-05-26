@@ -28,9 +28,7 @@ Widget titleWithButton() {
     children: [
       TitleWithCustomUnderline(title: "Recommended"),
       Spacer(),
-      FlatButton(onPressed: () {},
-          child: ,
-      ),
+
     ],
   );
 }
