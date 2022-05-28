@@ -1,6 +1,4 @@
-
 import 'package:flutter/cupertino.dart';
-
 import '../../../constants.dart';
 
 class TitleWithCustomUnderline  extends StatelessWidget {

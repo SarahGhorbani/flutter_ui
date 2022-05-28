@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/constants.dart';
 import 'package:flutter_ui/screens/home/components/header_with_searchbox.dart';
 import 'package:flutter_ui/screens/home/components/title_with_custom_under_line.dart';
 
@@ -25,7 +24,7 @@ class Body extends StatelessWidget {
 
 Widget titleWithButton() {
   return Row(
-    children: [
+    children: const [
       TitleWithCustomUnderline(title: "Recommended"),
       Spacer(),
 
