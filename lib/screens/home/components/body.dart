@@ -1,33 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/screens/home/components/header_with_searchbox.dart';
-import 'package:flutter_ui/screens/home/components/title_with_custom_under_line.dart';
+import 'package:flutter_ui/constants.dart';
+import 'package:flutter_ui/screens/home/components/header_with_search_box.dart';
+import 'package:flutter_ui/screens/home/components/recommend_plants.dart';
+import 'package:flutter_ui/screens/home/components/title_with_button.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
-      children: const [
-        HeaderWithSearchBox(
+      children: [
+        const HeaderWithSearchBox(
           searchIcon: 'assets/icons/back_arrow.svg',
           searchHintText: "search",
           headerIcon: 'assets/icons/back_arrow.svg',
           title: 'Hello Fashion!',
         ),
-        TitleWithCustomUnderline(title: "Recommended"),
+        Padding(
+          padding: const EdgeInsets.only(top: defaultPadding),
+          child: TitleWithButton(
+              title: 'Recommended', textButton: 'More', onPress: () {}),
+        ),
+        const RecommendsPlants(),
       ],
     );
   }
-}
-
-Widget titleWithButton() {
-  return Row(
-    children: const [
-      TitleWithCustomUnderline(title: "Recommended"),
-      Spacer(),
-
-    ],
-  );
 }
