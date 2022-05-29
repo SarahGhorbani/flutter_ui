@@ -25,6 +25,9 @@ class Body extends StatelessWidget {
               title: 'Recommended', textButton: 'More', onPress: () {}),
         ),
         const RecommendsPlants(),
+        TitleWithButton(title: 'Featured Plant',
+        textButton: 'More',
+        onPress: (){}),
       ],
     );
   }
