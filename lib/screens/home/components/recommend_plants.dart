@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_ui/screens/home/components/recommed_planet_card.dart';
+import 'package:flutter_ui/screens/home/components/recommend_planet_card.dart';
 
 class RecommendsPlants extends StatelessWidget {
   const RecommendsPlants({Key? key}) : super(key: key);

@@ -10,26 +10,32 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        const HeaderWithSearchBox(
-          searchIcon: 'assets/icons/back_arrow.svg',
-          searchHintText: "search",
-          headerIcon: 'assets/icons/back_arrow.svg',
-          title: 'Hello Fashion!',
+    return Column(children: [
+      const HeaderWithSearchBox(
+        searchIcon: 'assets/icons/back_arrow.svg',
+        searchHintText: "search",
+        headerIcon: 'assets/icons/back_arrow.svg',
+        title: 'Hello Fashion!',
+      ),
+      Expanded(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: defaultPadding),
+                child: TitleWithButton(
+                    title: 'Recommended', textButton: 'More', onPress: () {}),
+              ),
+              const RecommendsPlants(),
+              TitleWithButton(
+                  title: 'Featured Plant', textButton: 'More', onPress: () {}),
+              const RecommendsPlants(),
+            ],
+          ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: defaultPadding),
-          child: TitleWithButton(
-              title: 'Recommended', textButton: 'More', onPress: () {}),
-        ),
-        const RecommendsPlants(),
-        TitleWithButton(title: 'Featured Plant',
-        textButton: 'More',
-        onPress: (){}),
-      ],
-    );
+      )
+    ]);
   }
 }
 

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -24,7 +23,6 @@ class RecommendPlantCard extends StatelessWidget {
       top: defaultPadding/2,
       bottom: defaultPadding/2),
       width: size.width * 0.35,
-      height: size.width * 0.6,
       child: Column(
         children: [
           ClipRRect(
