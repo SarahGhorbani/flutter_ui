@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/constants.dart';
+import 'package:flutter_ui/screens/home/components/featured_items.dart';
 import 'package:flutter_ui/screens/home/components/header_with_search_box.dart';
 import 'package:flutter_ui/screens/home/components/recommend_plants.dart';
 import 'package:flutter_ui/screens/home/components/title_with_button.dart';
@@ -30,7 +31,7 @@ class Body extends StatelessWidget {
               const RecommendsPlants(),
               TitleWithButton(
                   title: 'Featured Plant', textButton: 'More', onPress: () {}),
-              const RecommendsPlants(),
+              const FeaturedItems(),
             ],
           ),
         ),
