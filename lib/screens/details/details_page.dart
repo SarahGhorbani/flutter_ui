@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_ui/constants.dart';
+import 'package:flutter_ui/screens/details/components/icon_button_with_shadow.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Row(
@@ -17,6 +19,21 @@ class DetailsPage extends StatelessWidget {
               Container(
                 width: size.width *0.2,
                 color: Colors.white,
+                child: Column(
+                  children: const [
+                    IconButtonWithShadow(color: primaryColor,
+                    icon: 'assets/images/1.jpg'),
+                    SizedBox(height: 10),
+                    IconButtonWithShadow(color: primaryColor,
+                      icon: 'assets/images/1.jpg',),
+                    SizedBox(height: 10),
+                    IconButtonWithShadow(color: primaryColor,
+                      icon: 'assets/images/1.jpg',),
+                    SizedBox(height: 10),
+                    IconButtonWithShadow(color: primaryColor,
+                      icon: 'assets/images/1.jpg',),
+                  ],
+                ),
               ),
               SizedBox(
                 width:size.width * 0.8 ,
@@ -45,12 +62,6 @@ class DetailsPage extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-  AppBar buildAppBar() {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: primaryColor,
     );
   }
 }
