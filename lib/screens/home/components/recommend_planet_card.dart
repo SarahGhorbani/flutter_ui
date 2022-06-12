@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/screens/details/details_page.dart';
 
 import '../../../constants.dart';
 
@@ -18,58 +19,65 @@ class RecommendPlantCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: const EdgeInsets.only(left: defaultPadding,
-      top: defaultPadding/2,
-      bottom: defaultPadding/2),
-      width: size.width * 0.35,
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            child: Image.asset(image),
-          ),
-          Container(
-            padding: const EdgeInsets.all(defaultPadding / 2.5),
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(defaultPadding / 2),
-                    bottomRight: Radius.circular(defaultPadding / 2))),
-            child: Row(
-              children: [
-                Expanded(
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: '$title\n'.toUpperCase(),
-                            style: const TextStyle(
-                              fontSize: 12,
-                              color: textColor,
-                            )),
-                        TextSpan(
-                            text: subTitle.toUpperCase(),
-                            style: const TextStyle(
-                              fontSize: 10,
-                              color: primaryColor,
-                            ))
-                      ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => DetailsPage()));
+      },
+      child: Container(
+        margin: const EdgeInsets.only(
+            left: defaultPadding,
+            top: defaultPadding / 2,
+            bottom: defaultPadding / 2),
+        width: size.width * 0.35,
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+              child: Image.asset(image),
+            ),
+            Container(
+              padding: const EdgeInsets.all(defaultPadding / 2.5),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(defaultPadding / 2),
+                      bottomRight: Radius.circular(defaultPadding / 2))),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                              text: '$title\n'.toUpperCase(),
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: textColor,
+                              )),
+                          TextSpan(
+                              text: subTitle.toUpperCase(),
+                              style: const TextStyle(
+                                fontSize: 10,
+                                color: primaryColor,
+                              ))
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                 Text(
-                  '\$$price',
-                  style: const TextStyle(
-                      fontSize: 10,
-                      color: primaryColor,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          )
-        ],
+                  Text(
+                    '\$$price',
+                    style: const TextStyle(
+                        fontSize: 10,
+                        color: primaryColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
