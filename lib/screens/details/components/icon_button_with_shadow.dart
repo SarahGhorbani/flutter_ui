@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class IconButtonWithShadow extends StatelessWidget {
   const IconButtonWithShadow({Key? key, required this.color, required this.icon}) : super(key: key);
   final Color color;
-  final String icon;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -27,7 +27,7 @@ class IconButtonWithShadow extends StatelessWidget {
               //   blurRadius: 50,
               // ),
         ]),
-        child: Image.asset(icon),
+        child: Icon(icon,color: color,),
       ),
     );
   }

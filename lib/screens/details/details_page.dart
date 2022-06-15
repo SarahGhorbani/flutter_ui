@@ -17,27 +17,33 @@ class DetailsPage extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: size.width *0.2,
+                width: size.width * 0.2,
+                height: size.height * 0.8,
                 color: Colors.white,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
-                    IconButtonWithShadow(color: primaryColor,
-                    icon: 'assets/images/1.jpg'),
-                    SizedBox(height: 10),
-                    IconButtonWithShadow(color: primaryColor,
-                      icon: 'assets/images/1.jpg',),
-                    SizedBox(height: 10),
-                    IconButtonWithShadow(color: primaryColor,
-                      icon: 'assets/images/1.jpg',),
-                    SizedBox(height: 10),
-                    IconButtonWithShadow(color: primaryColor,
-                      icon: 'assets/images/1.jpg',),
+                    IconButton(onPressed: null, icon: Icon(Icons.arrow_back)),
+                    IconButtonWithShadow(
+                        color: primaryColor, icon: Icons.add),
+                    IconButtonWithShadow(
+                      color: primaryColor,
+                      icon: Icons.add,
+                    ),
+                    IconButtonWithShadow(
+                      color: primaryColor,
+                      icon: Icons.add,
+                    ),
+                    IconButtonWithShadow(
+                      color: primaryColor,
+                      icon: Icons.add,
+                    ),
                   ],
                 ),
               ),
               SizedBox(
-                width:size.width * 0.8 ,
-                height: size.height *0.8,
+                width: size.width * 0.8,
+                height: size.height * 0.8,
                 child: Stack(
                   children: [
                     Positioned(
@@ -45,16 +51,16 @@ class DetailsPage extends StatelessWidget {
                       right: 0,
                       top: 0,
                       bottom: 0,
-                      child:  ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          bottomLeft: Radius.circular(40)
+                      child: ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(40),
+                            bottomLeft: Radius.circular(40)),
+                        child: Image.asset(
+                          "assets/images/1.jpg",
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                      child:Image.asset("assets/images/1.jpg",
-                        fit: BoxFit.cover,),
                     ),
-                    ),
-
                   ],
                 ),
               )
