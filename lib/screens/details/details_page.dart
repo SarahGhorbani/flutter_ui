@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_ui/constants.dart';
 import 'package:flutter_ui/screens/details/components/icon_button_with_shadow.dart';
+import 'package:flutter_ui/screens/home/components/title_with_price.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key}) : super(key: key);
@@ -24,8 +25,7 @@ class DetailsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     IconButton(onPressed: null, icon: Icon(Icons.arrow_back)),
-                    IconButtonWithShadow(
-                        color: primaryColor, icon: Icons.add),
+                    IconButtonWithShadow(color: primaryColor, icon: Icons.add),
                     IconButtonWithShadow(
                       color: primaryColor,
                       icon: Icons.add,
@@ -64,6 +64,15 @@ class DetailsPage extends StatelessWidget {
                   ],
                 ),
               )
+            ],
+          ),
+          Row(
+            children: [
+              TitleWithPrice(
+                title: "title",
+                subTitle: "subTitle",
+                price: "price",
+              ),
             ],
           )
         ],
