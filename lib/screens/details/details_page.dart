@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_ui/constants.dart';
 import 'package:flutter_ui/screens/details/components/icon_button_with_shadow.dart';
 import 'package:flutter_ui/screens/home/components/title_with_price.dart';
@@ -23,8 +22,13 @@ class DetailsPage extends StatelessWidget {
                 color: Colors.white,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: const [
-                    IconButton(onPressed: null, icon: Icon(Icons.arrow_back)),
+                  children:  [
+                    InkWell(
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                        child: const IconButton(
+                            onPressed: null, icon: Icon(Icons.arrow_back))),
                     IconButtonWithShadow(color: primaryColor, icon: Icons.add),
                     IconButtonWithShadow(
                       color: primaryColor,
